@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <!-----This internal css is for Modal only ------->
+    <style>
+        /* DES Calculate Modal Css*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  
+  padding: 40px 20px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  width: 40%;
+  padding-bottom: 80px;
+  
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  margin-top: -35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #DD1313;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-content .header{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal .modal-content .name{
+    color: #ADADAD;
+    font-size: 12px;
+    margin-top: -10px;
+}
+.modal .modal-content form{
+    margin-top: 40px;
+    
+}
+.modal .modal-content form.plaintext.key{
+    display: block;
+}
+.modal .modal-content form .key{
+    margin-top: 40px;
+}
+.modal .modal-content form .plaintext p{
+    font-size: 14px;
+    color: black;
+}
+.modal .modal-content form .key p{
+    font-size: 14px;
+    color: black;
+}
+.modal .modal-content form input{
+    margin-top: 5px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #84888b;
+    padding: 0px 10px;
+}
+.modal .modal-content form input[type]{
+    font-weight: bold;
+}
+.modal .modal-content form input:hover{
+    border: 1px solid #DD1313;
+    color: #DD1313;
+}
+
+.modal .modal-content .button{
+    float: right;
+    
+
+}
+.modal .modal-content .button button{
+    width: 100px;
+    color: white;
+}
+.modal .modal-content .button .clear{
+    border: 1px solid #adadad;
+    background-color: transparent;
+    color: black;
+}
+.modal .modal-content .button .clear:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+/* Help modal css */
+
+
+
+
+.modals {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contents {
+  background-color: #fefefe;
+  margin: auto;
+  border-radius: 5px;
+  padding: 40px 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+/* The Close Button */
+.closes {
+  color: black;
+  float: right;
+  font-size: 28px;
+  margin-top: -35px;
+  font-weight: bold;
+}
+
+.closes:hover,
+.closes:focus {
+  color: #DD1313;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modals .modal-contents .header{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modals .modal-contents .name{
+    color: #ADADAD;
+    font-size: 12px;
+    margin-top: -10px;
+}
+.modals .modal-contents .text-content{
+    margin-top: 40px;
+    
+}
+.modals .modal-contents .text-content p{
+    color: black;
+    font-size: 13px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="side-bar">
+        <div class="content">
+            <img src="img/logo.png" alt="Logo" srcset="">
+            <p>Action</p>
+            <button id="myBtn"><img class="btn-img" src="img/button_img-removebg-preview.png" alt="" srcset="" ><p class="btn-text">DES Calculate</p></button>
+                <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                 <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class="header">Data Encryption Standard Calculator(DESC)</p>
+                    <span class="name">by NRCJGRM</span>
+                   <form action="">
+                    <div class="plaintext">
+                        <p>Plaintext (Hexadecimal Format)</p>
+                        <input type="number">
+                    </div>
+                    <div class="key">
+                        <p>Key (Hexadecimal Format)</p>
+                        <input type="number">
+                    </div>
+                    
+                   </form>
+                   <div class="button">
+                    <button type="button" class="clear">Clear</button>
+                    <button type="button">Calculate</button>
+                   </div>
+                 </div>
+              
+                </div>
+            <button class="help" id="myBtns" style="background-color: transparent;"><img src="img/help_img.png" alt="" srcset="" style="width: 20px;margin-left: -140px;"><p style="color: black; margin-left: -70px; font-weight: 500; font-size: 12px; margin-top: -24px;">Help</p></button> 
+           
+
+            <!-- The Modal -->
+            <div id="myModals" class="modals">
+            
+              <!-- Modal content -->
+              <div class="modal-contents">
+                <span class="closes">&times;</span>
+                <p class="header">Data Encryption Standard Calculator(DESC)</p>
+                <span class="name">by NRCJGRM</span>
+                <div class="text-content">
+                    <p><b>Data Encryption Standard (DES)</b> is the most widely used block cipher in the world. It encrypts 64-bit data using a 64-bit key.</p>
+                </div>
+                <div class="text-content">
+                    <p><b style="display: block;">Usage</b>Given a plaintext and a key, this application will compute the DES ciphertext, and log every step in the process. Simply type a hexadecimal value into one of the input boxes, and the output will update automatically.</p>
+                </div>
+              </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-text">
+            <p>Data Encryption Standard Calculator (DESC)</p>
+            <span class="name">by NRCJGRM</span>
+        </div>
+    </div>
+    <section class="container">
+        <div class="firstcol">
+            <div class="step0">
+                <span>Step 0</span>
+                <div class="box0">
+                    <h3>Initialization</h3>
+                    <div class="plaintext">
+                        <p>Plaintext</p>
+                        <label for="">0000000000000000</label>
+                    </div>
+                    <div class="key">
+                        <p>Key</p>
+                        <label for="">0000000000000000</label>
+                    </div>
+                </div>
+            </div>
+            <div class="step1">
+                <span>Step 1</span>
+                <div class="box1">
+                    <h3>Convert to Binary</h3>
+                    <div class="plaintext">
+                        <p>Plaintext in Binary (64-bit)</p>
+                        <label for="">0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+                    </div>
+                    <div class="key">
+                        <p>Key in Binary (64-bit)</p>
+                        <label for="">0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+                    </div>
+                </div>
+            </div>
+            <div class="step2">
+                <span>Step 2</span>
+                <div class="box2">
+                    <h3>Permute the key through the PC-1 table</h3>
+                    <div class="plaintext">
+                        <p>Shuffle bits according to PC-1:</p>
+                        <table>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+        
+                        </table>
+                    </div>
+                    <div class="key">
+                        <p>Key after PC-1 (56-bit)</p>
+                        <label for="">0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step3">
+            <span>Step 3</span>
+            <div class="box3">
+                <h3>Rotating Each Half</h3>
+                <div class="plaintext">
+                    <p>Split the key in half, then left rotate each bit according to tne table:</p>
+                    <table>
+                        <tr>
+                            <td>Round</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Rotations</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                       
+                    </table>
+                </div>
+                <div class="key">
+                    <label for=""><b>C0 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D0 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 1 bit</p>
+                    <label for=""><b>C1 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D1 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 1 bit</p>
+                    <label for=""><b>C2 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D2 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C3 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D3 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C4 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D4 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C5 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D5 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C6 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D6 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C7 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D7 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C8 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D8 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 1 bit</p>
+                    <label for=""><b>C9 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D9 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C10 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D10 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C11 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D11 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C12 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D12 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C13 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D13 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C14 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D14 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 2 bit</p>
+                    <label for=""><b>C15 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D15 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+                <div class="key">
+                    <p>Left rotate by 1 bit</p>
+                    <label for=""><b>C16 = </b>0000000 0000000 0000000 0000000</label>
+                    <label for="" style="display: block;"><b>D16 = </b>0000000 0000000 0000000 0000000</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step4">
+        <span>Step 4</span>
+        <div class="box4">
+            <h3>Concatenation</h3>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD0 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD1 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD2 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD3 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD4 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD5 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD6 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD7 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD8 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD9 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD10 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD11 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD12 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD13 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD14 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD15 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+            <div class="key">
+                <p>Concatenate C and D</p>
+                <label for=""><b>CD16 = </b>0000000 0000000 0000000 0000000 0000000 0000000 0000000 0000000</label>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="step5">
+    <span>Step 5</span>
+    <div class="box5">
+        <h3>Permute the key through the PC-2 table</h3>
+        <div class="plaintext">
+            <p>Shuffle bits according to PC-2 (48-bit):</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="key">
+            <label for=""><b>K0 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K1 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K2 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K3 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K4 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K5 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K6 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K7 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K8 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K9 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K10 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K11 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K12 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K13 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K14 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K15 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>K16 = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+    </div>
+</div>
+<div class="step6">
+    <span>Step 6</span>
+    <div class="box6">
+        <h3>Permute the message through IP</h3>
+        <div class="plaintext">
+            <p>Shuffle bits according to the initial permutation (IP):
+            </p>
+            <table>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="key">
+            <p>Original message (64-bit):</p>
+            <label for="">0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+        </div>
+        <div class="key">
+            <p>Message after IP (64-bit):</p>
+            <label for="">0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+        </div>
+    </div>
+</div>
+<div class="step7">
+    <span>Step 7</span>
+    <div class="box7">
+        <h3>Encode the data</h3>
+        <div class="plaintext">
+            <p>Splitting the resulting message into two halves:
+            </p>
+            <div class="key">
+                
+                <label for=""><b>L0 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            </div>
+            <div class="key">
+                
+                <label for=""><b>R0= </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            </div>
+            <p>This can be expanded to 16 entries using the following formula
+            </p>
+            <div class="key">
+                
+                <label for=""><b>Ln = </b>Rn - 1</label>
+            </div>
+            <div class="key">
+                
+                <label for=""><b>Rn = </b>Ln - 1 ⊕ f(Rn - 1, Kn)</label>
+            </div>
+            <p>Where f = P(S(Kn ⊕ E(Rn))), where E expands 32 bits into 48 bits using the following table:
+            </p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                   
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+
+            </table>
+            <p>Then S splits the 48 bits into eight groups of six bits, and each group gets ran through the S-box as follows:
+            </p>
+            <p>Given the first group of six bits, abcdef, consider af to be the row number, and bcde to be the column number in the following table:
+            </p>
+        <p>S1:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>The other seven groups have the following S-boxes:</p>
+            <p>S2:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S3:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S4:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S5:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S6:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S7:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>S8:</p>
+            <table>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                
+
+            </table>
+            <p>Then finally, P mixes up the 32-bit output to get the output of f, using the following table:</p>
+            <table>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                   
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    
+                    
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+
+            </table>
+        <hr \ style="margin-top: 30px; height: 2px; border: none; background-color: black;">
+        <p>Using the formula described previously:</p>
+        <div class="key">
+                
+            <label for=""><b>Ln = </b>Rn - 1</label>
+        </div>
+        <div class="key">
+            
+            <label for=""><b>Rn = </b>Ln - 1 ⊕ f(Rn - 1, Kn) where f = S(Kn ⊕ E(Rn)),</label>
+        </div>
+        <p>We get that:</p>
+
+    </div>
+</div>
+</div>
+<div class="step8">
+    <span>Step 8</span>
+    <div class="box8">
+        <h3>Computing Round 1</h3>
+        <div class="key">
+            
+            <label for=""><b>L0 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for=""><b>R0 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for=""><b>K1 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R0) = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+            <br><label for=""><b>K1 ⊕ E(R0) = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+            <br><label for=""><b>S(K1 ⊕ E(R0)) = </b> 1110 1111 1010 0111 0010 1100 0100 1101</label>
+            <br><label for=""><b>f = P(S(K1 ⊕ E(R0))) = </b> 1101 1000 1101 1000 1101 1011 1011 1100</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L1 = R0 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for=""><b>R1 = L0 ⊕ f(R0, K1) = </b>1101 1000 1101 1000 1101 1011 1011 1100</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step9">
+    <span>Step 9</span>
+    <div class="box9">
+        <h3>Computing Round 2</h3>
+        <div class="key">
+            
+            <label for=""><b>L1 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for=""><b>R1 = </b>1101 1000 1101 1000 1101 1011 1011 1100</label>
+            <br><label for=""><b>K2 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R1) = </b>000000 000000 000000 000000 000000 000000 000000 000000</label>
+            <br><label for=""><b>K2 ⊕ E(R1) = </b>011011 110001 011011 110001 011011 110111 110111 111001</label>
+            <br><label for=""><b>S(K2 ⊕ E(R1)) = </b> 0101 1011 1011 1001 1001 0111 1111 0011</label>
+            <br><label for=""><b>f = P(S(K2 ⊕ E(R1))) = </b> 1110 0111 0011 1010 1110 1101 0100 1111</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L2 = R1 = </b>1101 1000 1101 1000 1101 1011 1011 1100</label>
+            <br><label for=""><b>R2 = L1 ⊕ f(R1, K2) = </b>1110 0111 0011 1010 1110 1101 0100 1111</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step10">
+    <span>Step 10</span>
+    <div class="box10">
+        <h3>Computing Round 3</h3>
+        <div class="key">
+            
+            <label for=""><b>L2 = </b>1101 1000 1101 1000 1101 1011 1011 1100</label>
+            <br><label for=""><b>R2 = </b>1110 0111 0011 1010 1110 1101 0100 1111</label>
+            <br><label for=""><b>K3 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R2) = </b>111100 001110 100111 110101 011101 011010 101001 011111</label>
+            <br><label for=""><b>K3 ⊕ E(R2) = </b>111100 001110 100111 110101 011101 011010 101001 011111</label>
+            <br><label for=""><b>S(K3 ⊕ E(R2)) = </b> 0101 0100 0000 0101 1000 0111 0001 0010</label>
+            <br><label for=""><b>f = P(S(K3 ⊕ E(R2))) = </b> 1000 0011 0010 0010 1011 0000 0001 1010</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L3 = R2 = </b>1110 0111 0011 1010 1110 1101 0100 1111</label>
+            <br><label for=""><b>R3 = L2 ⊕ f(R2, K3) = </b>0101 1011 1111 1010 0110 1011 1010 0110</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step11">
+    <span>Step 11</span>
+    <div class="box11">
+        <h3>Computing Round 4</h3>
+        <div class="key">
+            
+            <label for=""><b>L3 = </b>1110 0111 0011 1010 1110 1101 0100 1111</label>
+            <br><label for=""><b>R3 = </b>0101 1011 1111 1010 0110 1011 1010 0110</label>
+            <br><label for=""><b>K4 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R3) = </b>001011 110111 111111 110100 001101 010111 110100 001100</label>
+            <br><label for=""><b>K4 ⊕ E(R3) = </b>001011 110111 111111 110100 001101 010111 110100 001100</label>
+            <br><label for=""><b>S(K4 ⊕ E(R3)) = </b> 0010 1100 1100 0011 1101 1110 0110 1011</label>
+            <br><label for=""><b>f = P(S(K4 ⊕ E(R3))) = </b>  1011 1001 0111 1111 0000 1111 0001 1000</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L4 = R3 = </b>0101 1011 1111 1010 0110 1011 1010 0110</label>
+            <br><label for=""><b>R4 = L3 ⊕ f(R3, K4) = </b>0101 1110 0100 0101 1110 0010 0101 0111</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step12">
+    <span>Step 12</span>
+    <div class="box12">
+        <h3>Computing Round 5</h3>
+        <div class="key">
+            
+            <label for=""><b>L4 = </b>0101 1011 1111 1010 0110 1011 1010 0110</label>
+            <br><label for=""><b>R4 = </b>0101 1110 0100 0101 1110 0010 0101 0111</label>
+            <br><label for=""><b>K5 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R4) = </b>101011 111100 001000 001011 111100 000100 001010 101110</label>
+            <br><label for=""><b>K5 ⊕ E(R4) = </b>101011 111100 001000 001011 111100 000100 001010 101110</label>
+            <br><label for=""><b>S(K5 ⊕ E(R4)) = </b> 1001 0010 0110 1111 0000 1010 0000 0010</label>
+            <br><label for=""><b>f = P(S(K5 ⊕ E(R4))) = </b> 1101 0000 1110 0011 0001 0000 0100 0110</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L5 = R4 = </b> 0101 1110 0100 0101 1110 0010 0101 0111</label>
+            <br><label for=""><b>R5 = L4 ⊕ f(R4, K5) = </b>1000 1011 0001 1001 0111 1011 1110 0000</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step13">
+    <span>Step 13</span>
+    <div class="box13">
+        <h3>Computing Round 6</h3>
+        <div class="key">
+            
+            <label for=""><b>L5 = </b>0101 1110 0100 0101 1110 0010 0101 0111</label>
+            <br><label for=""><b>R5 = </b>1000 1011 0001 1001 0111 1011 1110 0000</label>
+            <br><label for=""><b>K6 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R5) = </b>010001 010110 100011 110010 101111 110111 111100 000001</label>
+            <br><label for=""><b>K6 ⊕ E(R5) = </b>010001 010110 100011 110010 101111 110111 111100 000001</label>
+            <br><label for=""><b>S(K6 ⊕ E(R5)) = </b> 1010 1101 1010 0001 1101 0111 1001 0001</label>
+            <br><label for=""><b>f = P(S(K6 ⊕ E(R5))) = </b> 1010 0011 1010 1100 0110 1011 0001 1101</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L1 = R0 = </b>1000 1011 0001 1001 0111 1011 1110 0000</label>
+            <br><label for=""><b>R6 = L5 ⊕ f(R5, K6) = </b>1111 1101 1110 1001 1000 1001 0100 1010</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step14">
+    <span>Step 14</span>
+    <div class="box14">
+        <h3>Computing Round 7</h3>
+        <div class="key">
+            
+            <label for=""><b>L6 = </b> 1000 1011 0001 1001 0111 1011 1110 0000</label>
+            <br><label for=""><b>R6 = </b>1111 1101 1110 1001 1000 1001 0100 1010</label>
+            <br><label for=""><b>K7 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R6) = </b> 011111 111011 111101 010011 110001 010010 101001 010101</label>
+            <br><label for=""><b>K7 ⊕ E(R6) = </b>011111 111011 111101 010011 110001 010010 101001 010101</label>
+            <br><label for=""><b>S(K7 ⊕ E(R6)) = </b> 1000 0101 0010 0111 0110 1101 0001 0110</label>
+            <br><label for=""><b>f = P(S(K7 ⊕ E(R6))) = </b> 1001 0010 1100 0110 0111 0000 1011 1100</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L7 = R6 = </b> 1111 1101 1110 1001 1000 1001 0100 1010</label>
+            <br><label for=""><b>R7 = L6 ⊕ f(R6, K7) = </b>0001 1001 1101 1111 0000 1011 0101 1100</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step15">
+    <span>Step 15</span>
+    <div class="box15">
+        <h3>Computing Round 8</h3>
+        <div class="key">
+            
+            <label for=""><b>L7 = </b> 1111 1101 1110 1001 1000 1001 0100 1010</label>
+            <br><label for=""><b>R7 = </b>0001 1001 1101 1111 0000 1011 0101 1100</label>
+            <br><label for=""><b>K8 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R7) = </b> 000011 110011 111011 111110 100001 010110 101011 111000</label>
+            <br><label for=""><b>K8 ⊕ E(R7) = </b>000011 110011 111011 111110 100001 010110 101011 111000</label>
+            <br><label for=""><b>S(K8 ⊕ E(R7)) = </b> 1111 0110 0101 0100 1011 0100 0100 1111</label>
+            <br><label for=""><b>f = P(S(K8 ⊕ E(R7))) = </b> 0110 1101 1001 0011 1001 1010 1011 1010</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L8 = R7 = </b>0001 1001 1101 1111 0000 1011 0101 1100</label>
+            <br><label for=""><b>R8 = L7 ⊕ f(R7, K8) = </b> 1001 0000 0111 1010 0001 0011 1111 0000</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step16">
+    <span>Step 16</span>
+    <div class="box16">
+        <h3>Computing Round 9</h3>
+        <div class="key">
+            
+            <label for=""><b>L8 = </b>0001 1001 1101 1111 0000 1011 0101 1100</label>
+            <br><label for=""><b>R8 = </b> 1001 0000 0111 1010 0001 0011 1111 0000</label>
+            <br><label for=""><b>K9 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R8) = </b>010010 100000 001111 110100 000010 100111 111110 100001</label>
+            <br><label for=""><b>K9 ⊕ E(R8) = </b>010010 100000 001111 110100 000010 100111 111110 100001</label>
+            <br><label for=""><b>S(K9 ⊕ E(R8)) = </b> 1010 0000 1010 0011 1100 1100 0010 0010</label>
+            <br><label for=""><b>f = P(S(K9 ⊕ E(R8))) = </b> 1001 0001 1100 0110 0000 0111 0000 1100</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L9 = R8 = </b>1001 0000 0111 1010 0001 0011 1111 0000</label>
+            <br><label for=""><b>R9 = L8 ⊕ f(R8, K9) = </b>1000 1000 0001 1001 0000 1100 0101 0000</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step17">
+    <span>Step 17</span>
+    <div class="box17">
+        <h3>Computing Round 10</h3>
+        <div class="key">
+            
+            <label for=""><b>L9 = </b> 1001 0000 0111 1010 0001 0011 1111 0000</label>
+            <br><label for=""><b>R9 = </b> 1000 1000 0001 1001 0000 1100 0101 0000</label>
+            <br><label for=""><b>K10 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R9) = </b>010001 010000 000011 110010 100001 011000 001010 100001</label>
+            <br><label for=""><b>K10 ⊕ E(R9) = </b>010001 010000 000011 110010 100001 011000 001010 100001</label>
+            <br><label for=""><b>S(K10 ⊕ E(R9)) = </b> 1010 1001 0111 0001 1011 1110 0000 0010</label>
+            <br><label for=""><b>f = P(S(K10 ⊕ E(R9))) = </b> 1011 0101 1010 1011 0100 0010 1000 1100</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L10 = R9 = </b>1000 1000 0001 1001 0000 1100 0101 0000</label>
+            <br><label for=""><b>R10 = L9 ⊕ f(R9, K10) = </b>0010 0101 1101 0001 0101 0001 0111 1100</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step18">
+    <span>Step 18</span>
+    <div class="box18">
+        <h3>Computing Round 11</h3>
+        <div class="key">
+            
+            <label for=""><b>L10 = </b> 1000 1000 0001 1001 0000 1100 0101 0000</label>
+            <br><label for=""><b>R10 = </b>0010 0101 1101 0001 0101 0001 0111 1100</label>
+            <br><label for=""><b>K11 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R10) = </b> 000100 001011 111010 100010 101010 100010 101111 111000</label>
+            <br><label for=""><b>K11 ⊕ E(R10) = </b>000100 001011 111010 100010 101010 100010 101111 111000</label>
+            <br><label for=""><b>S(K11 ⊕ E(R10)) = </b>  1101 0010 1010 0110 1101 1110 0111 1111</label>
+            <br><label for=""><b>f = P(S(K11 ⊕ E(R10))) = </b>  0111 1011 1111 0110 1001 1101 0010 1110</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L11 = R10 = </b>0010 0101 1101 0001 0101 0001 0111 1100</label>
+            <br><label for=""><b>R11 = L10 ⊕ f(R10, K11) = </b>1111 0011 1110 1111 1001 0001 0111 1110</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step19">
+    <span>Step 19</span>
+    <div class="box19">
+        <h3>Computing Round 12</h3>
+        <div class="key">
+            
+            <label for=""><b>L11 = </b>0010 0101 1101 0001 0101 0001 0111 1100</label>
+            <br><label for=""><b>R11 = </b>1111 0011 1110 1111 1001 0001 0111 1110</label>
+            <br><label for=""><b>K12 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R11) = </b>011110 100111 111101 011111 110010 100010 101111 111101</label>
+            <br><label for=""><b>K12 ⊕ E(R11) = </b>011110 100111 111101 011111 110010 100010 101111 111101</label>
+            <br><label for=""><b>S(K12 ⊕ E(R11)) = </b> 0111 0001 0010 1001 1001 1110 0111 0110</label>
+            <br><label for=""><b>f = P(S(K12 ⊕ E(R11))) = </b> 1011 0011 0011 0010 1100 0110 0110 1110</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L12 = R11 = </b>1111 0011 1110 1111 1001 0001 0111 1110</label>
+            <br><label for=""><b>R12 = L11 ⊕ f(R11, K12) = </b>1001 0110 1110 0011 1001 0111 0001 0010</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step20">
+    <span>Step 20</span>
+    <div class="box20">
+        <h3>Computing Round 13</h3>
+        <div class="key">
+            
+            <label for=""><b>L12 = </b>1111 0011 1110 1111 1001 0001 0111 1110</label>
+            <br><label for=""><b>R12 = </b>1001 0110 1110 0011 1001 0111 0001 0010</label>
+            <br><label for=""><b>K13 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R12) = </b>010010 101101 011100 000111 110010 101110 100010 100101</label>
+            <br><label for=""><b>K13 ⊕ E(R12) = </b>010010 101101 011100 000111 110010 101110 100010 100101</label>
+            <br><label for=""><b>S(K13 ⊕ E(R12)) = </b> 1010 0100 0010 0101 1001 0011 0100 1110</label>
+            <br><label for=""><b>f = P(S(K13 ⊕ E(R12))) = </b> 1010 1001 1011 0010 0011 0010 0011 0100</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L13 = R12 = </b>1001 0110 1110 0011 1001 0111 0001 0010</label>
+            <br><label for=""><b>R13 = L12 ⊕ f(R12, K13) = </b> 0101 1010 0101 1101 1010 0011 0100 1010</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step21">
+    <span>Step 21</span>
+    <div class="box21">
+        <h3>Computing Round 14</h3>
+        <div class="key">
+            
+            <label for=""><b>L13 = </b>1001 0110 1110 0011 1001 0111 0001 0010</label>
+            <br><label for=""><b>R13 = </b>0101 1010 0101 1101 1010 0011 0100 1010</label>
+            <br><label for=""><b>K14 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R13) = </b>001011 110100 001011 111011 110100 000110 101001 010100</label>
+            <br><label for=""><b>K14 ⊕ E(R13) = </b>001011 110100 001011 111011 110100 000110 101001 010100</label>
+            <br><label for=""><b>S(K14 ⊕ E(R13)) = </b>  0010 1100 0100 0111 1100 1111 0001 0011</label>
+            <br><label for=""><b>f = P(S(K14 ⊕ E(R13))) = </b> 1001 0011 0110 1111 0011 1010 0001 1000</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L14 = R13 = </b>0101 1010 0101 1101 1010 0011 0100 1010</label>
+            <br><label for=""><b>R14 = L13 ⊕ f(R13, K14) = </b> 0000 0101 1000 1100 1010 1101 0000 1010</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step22">
+    <span>Step 22</span>
+    <div class="box22">
+        <h3>Computing Round 15</h3>
+        <div class="key">
+            
+            <label for=""><b>L14 = </b>0101 1010 0101 1101 1010 0011 0100 1010</label>
+            <br><label for=""><b>R14 = </b>0000 0101 1000 1100 1010 1101 0000 1010</label>
+            <br><label for=""><b>K15 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R14) = </b>000000 001011 110001 011001 010101 011010 100001 010100</label>
+            <br><label for=""><b>K15 ⊕ E(R14) = </b>000000 001011 110001 011001 010101 011010 100001 010100</label>
+            <br><label for=""><b>S(K15 ⊕ E(R14)) = </b> 1110 0010 0100 0001 1111 0111 0110 0011</label>
+            <br><label for=""><b>f = P(S(K15 ⊕ E(R14))) = </b>1110 0001 1011 0111 1010 1110 1000 1000</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L15 = R14 = </b> 0000 0101 1000 1100 1010 1101 0000 1010</label>
+            <br><label for=""><b>R15 = L14 ⊕ f(R14, K15) = </b>1011 1011 1110 1010 0000 1101 1100 0010</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step23">
+    <span>Step 23</span>
+    <div class="box23">
+        <h3>Computing Round 16</h3>
+        <div class="key">
+            
+            <label for=""><b>L15 = </b>0000 0101 1000 1100 1010 1101 0000 1010</label>
+            <br><label for=""><b>R15 = </b>1011 1011 1110 1010 0000 1101 1100 0010</label>
+            <br><label for=""><b>K16 = </b> 000000 000000 000000 000000 000000 000000 000000 000000</label>
+        </div>
+        <div class="key">
+            <label for=""><b>E(R15) = </b> 010111 110111 111101 010100 000001 011011 111000 000101</label>
+            <br><label for=""><b>K16 ⊕ E(R15) = </b>010111 110111 111101 010100 000001 011011 111000 000101</label>
+            <br><label for=""><b>S(K16 ⊕ E(R15)) = </b> 1011 1100 0010 1000 1110 1011 0000 1101</label>
+            <br><label for=""><b>f = P(S(K16 ⊕ E(R15))) = </b> 0001 1001 1010 1100 0010 1010 1111 0110</label>
+        </div>
+        <div class="key">
+           
+            <label for=""><b>L16 = R15 = </b>1011 1011 1110 1010 0000 1101 1100 0010</label>
+            <br><label for=""><b>R16 = L15 ⊕ f(R15, K16) = </b> 0001 1100 0010 0000 1000 0111 1111 1100</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step24">
+    <span>Step 24</span>
+    <div class="box24">
+        <h3>Permute the encoded data through the IP-1 table</h3>
+        <p>Now that we have</p>
+        <div class="key">
+            
+            <label for=""><b>L16 = R15 = </b>1011 1011 1110 1010 0000 1101 1100 0010</label>
+            <br><label for=""><b>R0 = </b>0000 0000 0000 0000 0000 0000 0000 0000</label>
+           
+        </div>
+        <p>Concatenate them backwards to get:</p>
+        <div class="key">
+            <label for=""><b>R16L16 = </b>0001 1100 0010 0000 1000 0111 1111 1100 1011 1011 1110 1010 0000 1101 1100 0010</label>
+            
+        </div>
+        <p>Then re-shuffle R16L16 using the following IP-1 table:</p>
+        <table>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+
+        </table>
+        <p>To get:</p>
+        <div class="key">
+           
+            <label for=""><b>1000 1100 1010 0110 0100 1101 1110 1001 1100 0001 1011 0001 0010 0011 1010 0111</label>
+            
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+<div class="step25">
+    <span>Step 25</span>
+    <div class="box25">
+        <h3>Convert back into hexadecimal</h3>
+        <div class="key">
+            
+            <label for="" style="font-weight: 400;"><b>M2 = </b>0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for="" style="font-weight: 400;"><b>M = </b>0000 0000 0000 0000 0000</label>
+            
+        </div>
+        <div class="key">
+            <label for="" style="font-weight: 400;"><b>K2 = </b>0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</label>
+            <br><label for="" style="font-weight: 400;"><b>K = </b>0000 0000 0000 0000</label>
+            
+        </div>
+        <div class="key">
+           
+            <label for="" style="font-weight: 400;"><b>C2 = </b>1000 1100 1010 0110 0100 1101 1110 1001 1100 0001 1011 0001 0010 0011 1010 0111</label>
+            <br><label for="" style="font-weight: 400;"><b>C = </b>8CA6 4DE9 C1B1 23A7</label>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+
+<div class="step8" style="margin-bottom: 20px;">
+    <span style="font-size: 15px; font-weight: 500;">Ciphertext</span>
+    <div class="box8">
+        <label for="" style="font-size: 20px; font-weight: 500;">8CA64DE9C1B123A7</label>
+    </div>
+</div>
+</div>
+
+        
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!---------Help button for modal -->
+    <script>
+        // Get the modal
+        var modals = document.getElementById("myModals");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtns");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closes")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modals.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modals.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modals) {
+            modals.style.display = "none";
+          }
+        }
+        </script>
+
+        <!-------DES Calculate Button for modal ------->
+    <script>
+        var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+  }
+}
+    </script>
+</body>
+</html>
